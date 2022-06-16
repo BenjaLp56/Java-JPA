@@ -35,7 +35,7 @@ public class EditorialDAO implements DAO<Editorial> {
         return editorial;
     }
     
-    public void cambio(){
+    public void cambiosD(){
         
     }
 
