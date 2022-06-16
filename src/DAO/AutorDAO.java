@@ -65,9 +65,9 @@ public class AutorDAO implements DAO<Autor> {
 
     public Autor buscarXNombre(String nombre) {
         
-        
-        return (Autor)  em.createQuery("SELEC a FROM Autor a WHERE nombre = ?1 ")
-                .setParameter(1, nombre).getSingleResult();
+        String nom = nombre;
+        return (Autor)  em.createQuery("SELEC a FROM Autor a WHERE nombre LIKE :nom ")
+                .setParameter("nom", nombre).getSingleResult();
 
     }
     

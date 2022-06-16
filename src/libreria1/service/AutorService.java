@@ -15,13 +15,14 @@ public class AutorService {
         this.dao = new AutorDAO();
     }
 
-    public void crearAutor(String nombre, Boolean alta) throws Exception {
+    public Autor crearAutor(String nombre, Boolean alta) throws Exception {
         try {
             Autor autor = new Autor();
             autor.setNombre(nombre);
             autor.setAlta(alta);
 //            autor.setId(1);
             dao.crear(autor);
+            return autor;
         } catch (Exception e) {
             e.printStackTrace();
             throw e;

@@ -69,5 +69,15 @@ public class LibroDAO implements DAO<Libro> {
             
     
 }
+        
+        
+        public Libro buscarXIsbn(){
+            int isbn = 23;
+            
+            Libro libro = (Libro) em.createQuery("SELECT l FROM Libro l WHERE l.isbn LIKE :isbn ")
+                    .setParameter("isbn", isbn).getSingleResult();
+            
+            return libro;
+        }
 
 }

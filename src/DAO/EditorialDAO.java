@@ -34,6 +34,10 @@ public class EditorialDAO implements DAO<Editorial> {
 
         return editorial;
     }
+    
+    public void cambio(){
+        
+    }
 
     @Override
     public Editorial modificar(Editorial entity) {
@@ -46,6 +50,8 @@ public class EditorialDAO implements DAO<Editorial> {
 
     @Override
     public List<Editorial> consulta() {
+        
+        
         List<Editorial> editoriales = em.createQuery("SELECT e FROM Editorial e WHERE e.alta = true")
                 .getResultList();
         
